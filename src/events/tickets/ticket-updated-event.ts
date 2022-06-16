@@ -1,4 +1,4 @@
-import { Subjects } from './base/subjects';
+import { Subjects } from '../base/subjects';
 
 interface TicketUpdatedEventData {
   id: string;
