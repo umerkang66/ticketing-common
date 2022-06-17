@@ -18,3 +18,4 @@ export * from './events/base/base-listener';
 export * from './events/base/subjects';
 export * from './events/tickets/ticket-created-event';
 export * from './events/tickets/ticket-updated-event';
+export * from './events/orders/types/order-status';
