@@ -7,7 +7,7 @@ export interface OrderCanceledEvent {
     // orderId is needed for payments
     id: string;
     ticket: {
-      // order-ticketId is needed for tickets-service so that it unreserve it.
+      // order-ticketId is needed for tickets-service so that it unreserve it
       id: string;
     };
   };
