@@ -16,6 +16,8 @@ export abstract class Listener<T extends Event> {
   constructor(private client: Stan) {}
 
   private subscriptionOptions(): SubscriptionOptions {
+    // DURABLE NAME
+    // durableName can be same as queueGroupName
     // when we create a subscription name, nats internally is going to create a record of subscription, and it will see if the events previously has been sent and acknowledged by this service
 
     // if event fail by listener, we have to reprocess it, it should be added on the listener
@@ -37,7 +39,8 @@ export abstract class Listener<T extends Event> {
 
   public listen(): void {
     // subscribe to ticket:created channel
-    // also use queue group, to not dump the service in nats, if the service is stopped
+    // queueGroup is used if there are two copies of same service listening on same subscription, so the event should only go to one single servce copy
+    // queueGroup name is also used as DurableName, see the comment (explanation above)
     const subscription = this.client.subscribe(
       this.subject,
       this.queueGroupName,
