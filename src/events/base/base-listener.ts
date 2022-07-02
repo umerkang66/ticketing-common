@@ -9,7 +9,7 @@ interface Event {
 export abstract class Listener<T extends Event> {
   protected abstract readonly subject: T['subject'];
   protected abstract queueGroupName: string;
-  // this will receive event-data, and event-itself (msg), here we can run some business login.
+  // this will receive event-data, and event-itself (msg), here we can run some business login
   protected abstract onMessage(data: T['data'], msg: Message): void;
   protected ackWait = 5 * 1000;
 
