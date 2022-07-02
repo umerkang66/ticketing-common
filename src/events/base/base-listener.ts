@@ -39,7 +39,7 @@ export abstract class Listener<T extends Event> {
 
   public listen(): void {
     // subscribe to ticket:created channel
-    // queueGroup is used if there are two copies of same service listening on same subscription, so the event should only go to one single servce copy
+    // queueGroup is used if there are two copies of same service listening on same subscription, so the event should only go to one single service copy
     // queueGroup name is also used as DurableName, see the comment (explanation above)
     const subscription = this.client.subscribe(
       this.subject,
