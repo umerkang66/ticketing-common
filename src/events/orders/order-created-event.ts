@@ -9,6 +9,8 @@ export interface OrderCreatedEvent {
     userId: string;
     // Date will be stringified
     expiresAt: string;
+    // version no. automatically created by mongoose, to track the event version numbers in database
+    version: number;
     ticket: {
       id: string;
       price: number;

@@ -1,13 +1,13 @@
 import { Subjects } from '../base/subjects';
 
-interface TicketUpdatedEventData {
-  id: string;
-  title: string;
-  price: number;
-  userId: string;
-}
-
 export interface TicketUpdatedEvent {
   subject: Subjects.TicketUpdated;
-  data: TicketUpdatedEventData;
+  data: {
+    id: string;
+    title: string;
+    price: number;
+    userId: string;
+    // version no. automatically created by mongoose, to track the event version numbers in database
+    version: number;
+  };
 }
