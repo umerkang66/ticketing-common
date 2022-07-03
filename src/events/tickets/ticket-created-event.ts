@@ -7,7 +7,7 @@ export interface TicketCreatedEvent {
     title: string;
     price: number;
     userId: string;
-    // version no. automatically created by mongoose, to track the event version numbers in database
+    // version no. automatically created by mongoose, to track the event version numbers in database.
     version: number;
   };
 }
