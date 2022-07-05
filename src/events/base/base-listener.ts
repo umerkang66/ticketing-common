@@ -13,7 +13,7 @@ export abstract class Listener<T extends Event> {
   protected abstract onMessage(data: T['data'], msg: Message): void;
   protected ackWait = 5 * 1000;
 
-  constructor(private client: Stan) {}
+  constructor(protected client: Stan) {}
 
   private subscriptionOptions(): SubscriptionOptions {
     // DURABLE NAME
