@@ -7,6 +7,8 @@ export interface TicketCreatedEvent {
     title: string;
     price: number;
     userId: string;
+    // when ticket is created, orderId is null or undefined, but we have added it for completion state
+    orderId?: string;
     // version no. automatically created by mongoose, to track the event version numbers in database
     version: number;
   };

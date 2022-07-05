@@ -8,7 +8,7 @@ export interface TicketUpdatedEvent {
     price: number;
     userId: string;
     // when order is created, orderId is set to ticket, so we can acquire that order using id
-    orderId: string;
+    orderId?: string;
     // version no. automatically created by mongoose, to track the event version numbers in database
     version: number;
   };
